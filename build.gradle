@@ -1,0 +1,69 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    // Android SDK version
+    ext.androidMinSdkVersion = 16
+    ext.androidTargetSdkVersion = 29
+    ext.androidCompileSdkVersion = 29
+
+    // Kotlin
+    ext.kotlinVersion = '1.3.61'
+    ext.coroutinesVersion = '1.3.3'
+    ext.ankoVersion = '0.10.4'
+
+    // KTX
+    ext.liveDataKtx = '2.2.0'
+
+    // Android library
+    ext.androidGradlePlugin = '3.6.1'
+    ext.supportVersion = '1.1.0'
+    ext.recyclerViewVersion = '1.1.0'
+    ext.cardViewVersion = '1.0.0'
+    ext.lifecycleVersion = "2.2.0"
+    ext.roomVersion = "2.2.3"
+    ext.constraintLayoutVersion = '1.1.3'
+
+    //Paging
+    ext.pagingVersion = '2.1.0-alpha01'
+
+    // Networking
+    ext.retrofitVersion = '2.7.1'
+    ext.okHttpVersion = '4.3.1'
+
+    // Coil
+    ext.coilVersion = "0.9.5"
+
+    // Dagger
+    ext.daggerVersion = "2.23.1"
+
+    //Navigation
+    ext.navVersion = '2.3.0-alpha06'
+
+    //Timber
+    ext.timberVersion = '4.7.1'
+
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

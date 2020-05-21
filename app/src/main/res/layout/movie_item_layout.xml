@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="movie"
+            type="mm.sumyat.daggerforyou.storage.Movie" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/image_size"
+                android:scaleType="centerCrop"
+                android:src="@drawable/poster_placeholder"
+                app:imageUrl="@{`https://image.tmdb.org/t/p/w500`+movie.poster_path}" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="368dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginLeft="@dimen/margin"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{movie.title}"
+                android:textSize="@dimen/text_size"
+                tools:text="title" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginLeft="@dimen/margin"
+                android:layout_marginBottom="4dp"
+                android:text="@{movie.release_date}"
+                android:textSize="@dimen/text_size" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
