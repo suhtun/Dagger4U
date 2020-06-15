@@ -11,23 +11,19 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
 import mm.sumyat.daggerforyou.R
 import mm.sumyat.daggerforyou.binding.FragmentDataBindingComponent
 import mm.sumyat.daggerforyou.databinding.FragmentMovieBinding
-import mm.sumyat.daggerforyou.di.base.Injectable
 import mm.sumyat.daggerforyou.ui.listener.RetryCallback
 import mm.sumyat.daggerforyou.util.AppExecutors
 import mm.sumyat.daggerforyou.util.autoCleared
 import javax.inject.Inject
 
-class MovieFragment : Fragment(), Injectable {
+@AndroidEntryPoint
+class MovieFragment : Fragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-
-    val viewmodel: MovieViewModel by viewModels {
-        viewModelFactory
-    }
+    val viewmodel by viewModels<MovieViewModel>()
 
     @Inject
     lateinit var appExecutors: AppExecutors

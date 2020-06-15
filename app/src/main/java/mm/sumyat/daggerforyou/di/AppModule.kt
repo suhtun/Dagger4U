@@ -4,6 +4,8 @@ import android.app.Application
 import android.content.Context
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 import mm.sumyat.daggerforyou.BuildConfig
@@ -15,11 +17,9 @@ import mm.sumyat.daggerforyou.storage.LocalDatabase
 import mm.sumyat.daggerforyou.storage.MovieDao
 import javax.inject.Singleton
 
-@ExperimentalCoroutinesApi
-@InternalCoroutinesApi
-@Module(includes = [ViewModelModule::class])
+@Module
+@InstallIn(ApplicationComponent::class)
 class AppModule {
-
     @Singleton
     @Provides
     fun provideContext(application: Application): Context {

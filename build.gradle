@@ -36,6 +36,10 @@ buildscript {
     // Dagger
     ext.daggerVersion = "2.23.1"
 
+    //Hilt
+    ext.hiltVersion = "2.28-alpha"
+    ext.hiltAndroidXVersion = '1.0.0-alpha01'
+
     //Navigation
     ext.navVersion = '2.3.0-alpha06'
 
@@ -48,9 +52,10 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath 'com.android.tools.build:gradle:4.0.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

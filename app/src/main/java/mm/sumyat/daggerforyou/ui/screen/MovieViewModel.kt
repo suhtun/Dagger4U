@@ -1,5 +1,6 @@
 package mm.sumyat.daggerforyou.ui.screen
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import mm.sumyat.daggerforyou.domain.Repository
 import mm.sumyat.daggerforyou.storage.Movie
@@ -7,7 +8,7 @@ import mm.sumyat.daggerforyou.util.AbsentLiveData
 import mm.sumyat.daggerforyou.util.ViewState
 import javax.inject.Inject
 
-class MovieViewModel @Inject constructor(repository: Repository):ViewModel(){
+class MovieViewModel @ViewModelInject constructor(repository: Repository):ViewModel(){
 
     //kind of action to call repository
     private val _callRepo = MutableLiveData<String>()
